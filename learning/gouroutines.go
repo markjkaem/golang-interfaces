@@ -27,7 +27,7 @@ func dbCall(i int) {
 	time.Sleep(time.Duration(delay) * time.Millisecond)
 	fmt.Println("\nThe result from the database is: ", dbData[i])
 	save(dbData[i])
-	log()
+	logging()
 	wg.Done()
 }
 
@@ -37,7 +37,7 @@ func save(result string) {
 	mx.Unlock()
 }
 
-func log() {
+func logging() {
 	mx.RLock()
 	fmt.Printf("\nthe current results are%v", results)
 	mx.RUnlock()

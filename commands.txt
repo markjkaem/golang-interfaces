@@ -17,5 +17,12 @@ but you want the same data but an int16, now you have to make another function w
 the exact same except for the type. With generics you can add kind of parameter types which
 can save an significant amount of code writing.
 
+-the context package gives us the opportunity to give certain limits for how long some data
+can wait for it to receive. for example 200 miliseconds maximum. If it fails, than we can 
+return an error, otherwise, we can return the data.
+
+-then the go routines can only be returned through channels, so we can make a new channel 
+with make(chan type). 
+
 
 
